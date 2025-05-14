@@ -1,11 +1,24 @@
 let currentEditId = null;
+let cropData = null;
+
+async function loadCropData() {
+  try {
+    const response = await fetch('4.json');
+    if (!response.ok) throw new Error('Failed to fetch crop data');
+    const data = await response.json();
+    cropData = data;
+  } catch (error) {
+    console.error('Error loading crop data:', error);
+    document.getElementById("resultArea").innerHTML = "Failed to load crop data.";
+  }
+}
 
 function saveQuery(soilType, ph, n, p, k, results) {
   const queries = JSON.parse(localStorage.getItem('cropQueries') || '[]');
   const newQuery = {
     id: Date.now(),
     date: new Date().toLocaleString('en-US'),
-    soilType,ph,n,p,k,results
+    soilType, ph, n, p, k, results
   };
   queries.unshift(newQuery);
   localStorage.setItem('cropQueries', JSON.stringify(queries));
@@ -64,32 +77,42 @@ function exitEditMode() {
   document.getElementById("resultArea").innerHTML = '';
 }
 
-document.addEventListener('DOMContentLoaded', displaySavedQueries);
+document.addEventListener('DOMContentLoaded', () => {
+  displaySavedQueries();
+  loadCropData();
+});
 
-document.getElementById("recommendForm").addEventListener("submit", async function (e) {
+document.getElementById("recommendForm").addEventListener("submit", function (e) {
   e.preventDefault();
+
+  const resultArea = document.getElementById("resultArea");
+  resultArea.innerHTML = '';
 
   const soilType = document.getElementById("soilType").value;
   const ph = parseFloat(document.getElementById("ph").value);
   const n = parseFloat(document.getElementById("n").value);
   const p = parseFloat(document.getElementById("p").value);
   const k = parseFloat(document.getElementById("k").value);
-  const resultArea = document.getElementById("resultArea");
 
   if (ph < 0 || ph > 14 || n < 0 || p < 0 || k < 0) {
     resultArea.textContent = "Please check your input values.";
     return;
   }
 
+  if (!cropData) {
+    resultArea.textContent = "Crop data not loaded.";
+    return;
+  }
+
   try {
-    const response = await fetch("./4.json");
-    const data = await response.json();
-    const crops = data.Crop || [];
+    const crops = cropData.Crop;
     const matchingCrops = crops.filter(crop =>
       crop.SuitableSoilType.toLowerCase() === soilType.toLowerCase()
     );
 
-    const results = matchingCrops.length === 0 ? "No suitable crops found for this soil type.": "<strong>Recommended Crops:</strong><br>" +
+    const results = matchingCrops.length === 0
+      ? "No suitable crops found for this soil type."
+      : "<strong>Recommended Crops:</strong><br>" +
         matchingCrops.map(crop => `- ${crop.CropName}`).join("<br>");
 
     resultArea.innerHTML = results;
@@ -111,6 +134,7 @@ document.getElementById("recommendForm").addEventListener("submit", async functi
       saveQuery(soilType, ph, n, p, k, results);
     }
   } catch (err) {
-    resultArea.textContent = "Error loading crop data.";
+    console.error("Error:", err);
+    resultArea.textContent = "Error processing crop data.";
   }
 });
