@@ -1,0 +1,124 @@
+{
+  "Crop": [
+    {
+      "CropName": "Wheat",
+      "SuitableSoilType": "Clay",
+      "pH": {"min": 6.0, "max": 7.5},
+      "N": {"min": 40, "max": 80},
+      "P": {"min": 30, "max": 60},
+      "K": {"min": 50, "max": 100}
+    },
+    {
+      "CropName": "Rice",
+      "SuitableSoilType": "Silt",
+      "pH": {"min": 5.5, "max": 6.5},
+      "N": {"min": 60, "max": 100},
+      "P": {"min": 40, "max": 80},
+      "K": {"min": 60, "max": 120}
+    },
+    {
+      "CropName": "Barley",
+      "SuitableSoilType": "Sandy",
+      "pH": {"min": 6.0, "max": 7.0},
+      "N": {"min": 30, "max": 70},
+      "P": {"min": 20, "max": 50},
+      "K": {"min": 40, "max": 90}
+    },
+    {
+      "CropName": "Maize",
+      "SuitableSoilType": "Loamy",
+      "pH": {"min": 5.8, "max": 7.0},
+      "N": {"min": 50, "max": 90},
+      "P": {"min": 35, "max": 70},
+      "K": {"min": 55, "max": 110}
+    },
+    {
+      "CropName": "Soybean",
+      "SuitableSoilType": "Loamy",
+      "pH": {"min": 6.0, "max": 7.0},
+      "N": {"min": 40, "max": 80},
+      "P": {"min": 30, "max": 60},
+      "K": {"min": 45, "max": 95}
+    },
+    {
+      "CropName": "Cotton",
+      "SuitableSoilType": "Clay",
+      "pH": {"min": 5.5, "max": 8.0},
+      "N": {"min": 45, "max": 85},
+      "P": {"min": 25, "max": 55},
+      "K": {"min": 40, "max": 90}
+    },
+    {
+      "CropName": "Potato",
+      "SuitableSoilType": "Sandy",
+      "pH": {"min": 5.0, "max": 6.5},
+      "N": {"min": 35, "max": 75},
+      "P": {"min": 30, "max": 60},
+      "K": {"min": 45, "max": 95}
+    },
+    {
+      "CropName": "Tomato",
+      "SuitableSoilType": "Loamy",
+      "pH": {"min": 5.5, "max": 7.0},
+      "N": {"min": 40, "max": 80},
+      "P": {"min": 35, "max": 65},
+      "K": {"min": 50, "max": 100}
+    },
+    {
+      "CropName": "Cucumber",
+      "SuitableSoilType": "Loamy",
+      "pH": {"min": 6.0, "max": 7.0},
+      "N": {"min": 45, "max": 85},
+      "P": {"min": 30, "max": 60},
+      "K": {"min": 40, "max": 90}
+    },
+    {
+      "CropName": "Pepper",
+      "SuitableSoilType": "Loamy",
+      "pH": {"min": 6.0, "max": 7.0},
+      "N": {"min": 40, "max": 80},
+      "P": {"min": 35, "max": 65},
+      "K": {"min": 45, "max": 95}
+    },
+    {
+      "CropName": "Carrot",
+      "SuitableSoilType": "Sandy",
+      "pH": {"min": 6.0, "max": 7.0},
+      "N": {"min": 35, "max": 75},
+      "P": {"min": 25, "max": 55},
+      "K": {"min": 40, "max": 90}
+    },
+    {
+      "CropName": "Onion",
+      "SuitableSoilType": "Loamy",
+      "pH": {"min": 6.0, "max": 7.0},
+      "N": {"min": 40, "max": 80},
+      "P": {"min": 30, "max": 60},
+      "K": {"min": 45, "max": 95}
+    },
+    {
+      "CropName": "Garlic",
+      "SuitableSoilType": "Loamy",
+      "pH": {"min": 6.0, "max": 7.0},
+      "N": {"min": 35, "max": 75},
+      "P": {"min": 30, "max": 60},
+      "K": {"min": 40, "max": 90}
+    },
+    {
+      "CropName": "Lettuce",
+      "SuitableSoilType": "Loamy",
+      "pH": {"min": 6.0, "max": 7.0},
+      "N": {"min": 40, "max": 80},
+      "P": {"min": 30, "max": 60},
+      "K": {"min": 45, "max": 95}
+    },
+    {
+      "CropName": "Spinach",
+      "SuitableSoilType": "Loamy",
+      "pH": {"min": 6.0, "max": 7.0},
+      "N": {"min": 45, "max": 85},
+      "P": {"min": 35, "max": 65},
+      "K": {"min": 50, "max": 100}
+    }
+  ]
+}
