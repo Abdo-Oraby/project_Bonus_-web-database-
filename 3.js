@@ -110,7 +110,6 @@ document.getElementById("recommendForm").addEventListener("submit", async functi
     } else {
       saveQuery(soilType, ph, n, p, k, results);
     }
-
   } catch (err) {
     resultArea.textContent = "Error loading crop data.";
   }
